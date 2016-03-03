@@ -8,8 +8,11 @@ except ImportError:
     from distutils.core import setup
 
 
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
+
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
 requirements = [
     # TODO: put package requirements here
@@ -20,27 +23,27 @@ test_requirements = [
 ]
 
 setup(
-    name='{{ cookiecutter.repo_name }}',
+    name='{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
-    description='{{ cookiecutter.project_short_description }}',
+    description="{{ cookiecutter.project_short_description }}",
     long_description=readme + '\n\n' + history,
-    author='{{ cookiecutter.full_name }}',
+    author="{{ cookiecutter.full_name }}",
     author_email='{{ cookiecutter.email }}',
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
+    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
     packages=[
-        '{{ cookiecutter.repo_name }}',
+        '{{ cookiecutter.project_slug }}',
     ],
-    package_dir={'{{ cookiecutter.repo_name }}':
-                 '{{ cookiecutter.repo_name }}'},
+    package_dir={'{{ cookiecutter.project_slug }}':
+                 '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
     install_requires=requirements,
-    license="BSD",
+    license="ISCL",
     zip_safe=False,
-    keywords='{{ cookiecutter.repo_name }}',
+    keywords='{{ cookiecutter.project_slug }}',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: ISC License (ISCL)',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.6',
@@ -48,6 +51,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
     tests_require=test_requirements
