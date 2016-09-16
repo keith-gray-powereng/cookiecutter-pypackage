@@ -14,6 +14,7 @@ Getting Started
 
    readme
    tutorial
+   pypi_release_checklist
 
 Basics
 ------
@@ -30,6 +31,7 @@ Advanced Features
    :maxdepth: 2
 
    travis_pypi_setup
+   console_script_setup
 
 
 Indices and tables
@@ -38,4 +40,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
