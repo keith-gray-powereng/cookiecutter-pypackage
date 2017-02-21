@@ -12,6 +12,7 @@ Contents:
    contributing
    {% if cookiecutter.create_author_file == 'y' -%}authors{% endif -%}
    history
+   code
 
 Indices and tables
 ==================
